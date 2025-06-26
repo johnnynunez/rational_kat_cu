@@ -2,9 +2,9 @@
 requires = [
     "setuptools>=42",
     "wheel",
-    "torch>=2.0",   # BuildExtension lives inside torch
-    "triton",
     "ninja",        # optional, speeds up CUDA compilation
-    "numpy"
+    "torch>=2.7",   # BuildExtension lives inside torch
+    "triton>=3.3.0",
+    "numpy>=1.26.4",
 ]
 build-backend = "setuptools.build_meta"
