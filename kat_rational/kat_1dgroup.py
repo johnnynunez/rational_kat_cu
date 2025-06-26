@@ -1,5 +1,5 @@
 import torch
-import kat_rational_cu
+from . import _cuda as kat_rational_cu
 from torch import nn
 import os
 import json
@@ -156,5 +156,3 @@ if __name__=="__main__":
     plt.title("Response of KAT_1DGroup")
     plt.grid(True)
     plt.savefig("kat_1dgroup.png")
-    
-    
