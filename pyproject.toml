@@ -4,7 +4,12 @@ requires = [
     "wheel",
     "ninja",        # optional, speeds up CUDA compilation
     "torch>=2.7",   # BuildExtension lives inside torch
-    "triton>=3.3.0",
     "numpy>=1.26.4",
+]
+[project]
+dependencies = [
+  "torch>=2.7",
+  "triton>=3.3.0 ; platform_system != 'Windows'",
+  "triton-windows>=3.3 ; platform_system == 'Windows'",
 ]
 build-backend = "setuptools.build_meta"
