@@ -1,9 +1,6 @@
 # setup.py
 import glob
-from pathlib import Path
 from setuptools import setup
-from setuptools.command.build_ext import build_ext
-
 
 def get_extensions():
     """
@@ -30,28 +27,12 @@ def get_extensions():
             },
         )
     ]
-    return ext_modules, {"build_ext": BuildExtension}
-
+    cmdclass = {"build_ext": BuildExtension}
+    return ext_modules, cmdclass
 
 ext_modules, cmdclass = get_extensions()
 
 setup(
-    name="kat_rational",
-    version="0.4",
-    author="adamdad",
-    author_email="yxy_adadm@qq.com",
-    description="CUDA-optimised group-wise rational function for KAT",
-    long_description=(
-        "A PyTorch C++/CUDA extension that provides fast group-wise rational "
-        "functions used in the *kat* project."
-    ),
-    python_requires=">=3.8",
-    install_requires=[
-        "torch>=2.0",
-        "numpy>=1.26.4",
-        'triton>=3.0.0; sys_platform != "win32"',
-        'triton-windows>=3.0.0; sys_platform == "win32"',
-    ],
     ext_modules=ext_modules,
     cmdclass=cmdclass,
 )
