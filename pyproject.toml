@@ -1,0 +1,8 @@
+[build-system]
+requires = [
+    "setuptools>=42",
+    "wheel",
+    "torch>=2.0",   # BuildExtension lives inside torch
+    "ninja"         # optional, speeds up CUDA compilation
+]
+build-backend = "setuptools.build_meta"
