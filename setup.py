@@ -1,7 +1,5 @@
 import glob
-import torch
 from setuptools import setup, find_packages
-from torch.utils.cpp_extension import BuildExtension, CUDAExtension, CppExtension
 
 
 sources = glob.glob('src/*.cpp')+glob.glob('src/*.cu')
@@ -21,5 +19,4 @@ setup(
     #                   sources=sources,
     #                   )
     # ],
-    cmdclass={'build_ext': BuildExtension}
 )
