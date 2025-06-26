@@ -46,7 +46,7 @@ setup(
         "functions used in the *kat* project."
     ),
     python_requires=">=3.8",
-    install_requires=["torch>=2.0"],
+    install_requires=["torch>=2.0",  "triton", "numpy"],
     ext_modules=ext_modules,
     cmdclass=cmdclass,
 )
