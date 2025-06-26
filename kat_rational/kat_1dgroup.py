@@ -1,5 +1,8 @@
 import torch
-from . import _cuda as kat_rational_cu
+try:
+    from kat_rational import _cuda as kat_rational_cu
+except ImportError:
+    kat_rational_cu = None 
 from torch import nn
 import os
 import json
