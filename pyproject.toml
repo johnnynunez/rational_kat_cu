@@ -3,6 +3,7 @@ requires = [
     "setuptools>=42",
     "wheel",
     "torch>=2.0",   # BuildExtension lives inside torch
+    "triton",
     "ninja",        # optional, speeds up CUDA compilation
     "numpy"
 ]
