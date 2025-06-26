@@ -2,14 +2,26 @@
 requires = [
     "setuptools>=42",
     "wheel",
-    "ninja",        # optional, speeds up CUDA compilation
-    "torch>=2.7",   # BuildExtension lives inside torch
+    "ninja",
+    "torch>=2.0",    # torch es necesario para compilar la extensión
     "numpy>=1.26.4",
 ]
-[project]
-dependencies = [
-  "torch>=2.7",
-  "triton>=3.3.0 ; platform_system != 'Windows'",
-  "triton-windows>=3.3 ; platform_system == 'Windows'",
-]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "kat_rational"
+version = "0.4"
+author = "adamdad"
+author_email = "yxy_adadm@qq.com"
+description = "CUDA-optimised group-wise rational function for KAT"
+readme = "README.md"
+python_requires = ">=3.8"
+dependencies = [
+    "torch>=2.0",
+    "numpy>=1.26.4",
+    "triton>=2.1.0; sys_platform != 'win32'",
+    "triton-windows>=2.1.0; sys_platform == 'win32'",
+]
+
+[project.urls]
+Homepage = "https://github.com/Adamdad/rational_kat_cu"
